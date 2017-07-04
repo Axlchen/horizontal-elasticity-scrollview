@@ -2,7 +2,7 @@
 
 仿豆瓣首页的横向弹性滑动的控件
 
-###效果展示
+### 效果展示
 
 - 滑动到最左边并继续滑动后松手
 
@@ -16,7 +16,7 @@
 
 ![](art/2017-07-04 21_24_24.gif)
 
-###使用方法
+### 使用方法
 继承自[HorizontalScrollview](https://developer.android.google.cn/reference/android/widget/HorizontalScrollView.html)，所以用法基本一致
 
 ```xml
