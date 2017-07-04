@@ -8,4 +8,17 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TranslucentTheme" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <declare-styleable name="HorizontalOverScrollView">
+        <attr name="ripple_color" format="color|reference" />
+        <attr name="drag_text_color" format="color|reference" />
+        <attr name="dragging_text" format="string|reference" />
+        <attr name="dragged_text" format="string|reference" />
+        <attr name="msg_width" format="dimension|reference" />
+        <attr name="msg_text_size" format="dimension|reference" />
+    </declare-styleable>
+
 </resources>
