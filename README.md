@@ -19,8 +19,12 @@
 ###使用方法
 继承自[HorizontalScrollview](https://developer.android.google.cn/reference/android/widget/HorizontalScrollView.html)，所以用法基本一致
 
+<<<<<<< HEAD
 ```xml
 <xyz.axlchen.horizontaloverscrollview.HorizontalOverScrollView
+=======
+	<xyz.axlchen.horizontaloverscrollview.HorizontalOverScrollView
+>>>>>>> c59c26e1d21281dc8ff99639c60627f42c9e9a88
 			        android:layout_width="match_parent"
 			        android:id="@+id/horizontal_over_scroll_view"
 			        android:layout_height="wrap_content"
@@ -31,5 +35,9 @@
 			
 			        <include layout="@layout/item_view"/>
 
+<<<<<<< HEAD
 <xyz.axlchen.horizontaloverscrollview.HorizontalOverScrollView>
 ```
+=======
+	<xyz.axlchen.horizontaloverscrollview.HorizontalOverScrollView>
+>>>>>>> c59c26e1d21281dc8ff99639c60627f42c9e9a88
