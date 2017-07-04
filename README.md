@@ -6,7 +6,7 @@
 
 - 滑动到最左边并继续滑动后松手
 
-![situation1](art/2017-07-04 20_39_52.gif)
+![situation1](https://github.com/Axlchen/horizontal-elasticity-scrollview/blob/master/art/2017-07-04%2020_39_52.gif)
 
 - 滑动到左边，继续滑动后恢复
 
