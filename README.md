@@ -6,15 +6,15 @@
 
 - 滑动到最左边并继续滑动后松手
 
-![](art/2017-07-04 20_39_52.gif)
+![situation1](art/2017-07-04 20_39_52.gif)
 
 - 滑动到左边，继续滑动后恢复
 
-![](art/2017-07-04 21_22_54.gif)
+![situation2](art/2017-07-04 21_22_54.gif)
 
 - 滑动到最右边，继续滑动到一定距离，产生动作
 
-![](art/2017-07-04 21_24_24.gif)
+![situation3](art/2017-07-04 21_24_24.gif)
 
 ### 使用方法
 继承自[HorizontalScrollview](https://developer.android.google.cn/reference/android/widget/HorizontalScrollView.html)，所以用法基本一致
