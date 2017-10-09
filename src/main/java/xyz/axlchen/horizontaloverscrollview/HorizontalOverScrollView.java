@@ -12,7 +12,6 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
@@ -128,71 +127,6 @@ public class HorizontalOverScrollView extends HorizontalScrollView {
 
     public void setMoreActionListener(MoreActionListener listener) {
         this.mListener = listener;
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                mLastX = ev.getRawX();
-                break;
-            case MotionEvent.ACTION_MOVE:
-                float mDeltaX = (ev.getRawX() - mLastX);
-                mLastX = ev.getRawX();
-                mDeltaX = mDeltaX * RATIO;
-                if (mDeltaX > 0) {
-                    if (!canScrollHorizontally(-1) || mWrapView.getScrollX() > 0) {
-                        if (mContentView.getScrollX() > 0) {
-                            mContentView.scrollBy((int) -mDeltaX, 0);
-                            mMsg.setText(mStringDragged);
-                        } else {
-                            mWrapView.scrollBy((int) -mDeltaX, 0);
-                            mMsg.setText(mStringDragging);
-
-                            mControlPoint.x = (int) (mRect.right - mWrapView.getScrollX() * RIPPLE_RATIO);
-                            mControlPoint.y = mRect.bottom / 2;
-                            invalidate();
-                        }
-                        return true;
-                    }
-                } else {
-                    if (!canScrollHorizontally(1) || mWrapView.getScrollX() < 0) {
-                        if (!canScrollHorizontally(1)) {
-                            getDrawingRect(mRect);
-                        }
-                        if (mWrapView.getScrollX() >= mOffset) {
-                            mContentView.scrollBy((int) -mDeltaX, 0);
-                            mMsg.setText(mStringDragged);
-                        } else {
-                            mWrapView.scrollBy((int) -mDeltaX, 0);
-                            mMsg.setText(mStringDragging);
-
-                            mControlPoint.x = (int) (mRect.right - mWrapView.getScrollX() * RIPPLE_RATIO);
-                            mControlPoint.y = mRect.bottom / 2;
-                            invalidate();
-                        }
-                        return true;
-                    }
-                }
-                break;
-            case MotionEvent.ACTION_CANCEL:
-            case MotionEvent.ACTION_UP:
-                checkAction();
-                if (mWrapView.getScrollX() < 0) {
-                    mScroller.startScroll(mWrapView.getScrollX(), 0, 0 - mWrapView.getScrollX(), 0,
-                            (0 - mWrapView.getScrollX()) * 5);
-                } else if (mContentView.getScrollX() > 0) {
-                    mScroller.startScroll(mContentView.getScrollX() + mWrapView.getScrollX(), 0,
-                            0 - mContentView.getScrollX() - mWrapView.getScrollX(), 0,
-                            (mContentView.getScrollX() + mWrapView.getScrollX()) * 6);
-                } else {
-                    mScroller.startScroll(mWrapView.getScrollX(), 0, 0 - mWrapView.getScrollX(), 0,
-                            mWrapView.getScrollX() * 5);
-                }
-                invalidate();
-                break;
-        }
-        return super.onTouchEvent(ev);
     }
 
     private void checkAction() {
